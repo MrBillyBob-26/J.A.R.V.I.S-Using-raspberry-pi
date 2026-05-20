@@ -1,0 +1,21 @@
+[Unit]
+Description=Jarvis Voice Assistant
+After=network-online.target sound.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=YOUR_USER
+Group=audio
+WorkingDirectory=/home/YOUR_USER
+Environment=HOME=/home/YOUR_USER
+EnvironmentFile=-/home/YOUR_USER/.env
+ExecStart=/home/YOUR_USER/start_jarvis.sh
+Restart=on-failure
+RestartSec=20
+TimeoutStartSec=180
+
+[Install]
+WantedBy=multi-user.target
