@@ -1,0 +1,10 @@
+.env
+*.pyc
+__pycache__/
+jarvis_env/
+venv/
+.jarvis_volume
+jarvis.log
+*.mp3
+*.wav
+.DS_Store
